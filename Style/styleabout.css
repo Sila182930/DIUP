@@ -175,6 +175,9 @@ body::before {
 @media (max-width: 480px) {
   /* mobile: keep it compact */
   .section-divider { width: 70%; max-width: 220px; }
+  .lead-text-muted{
+  font-size: 17px;
+}
 }
 
 .company-section-py-5 .row , .row-mb-5 {

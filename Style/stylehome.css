@@ -89,9 +89,7 @@
 }
 
 @media (max-width: 480px) {
-    .home{
-        background-image: radial-gradient(circle at 100% 50%, transparent 30%, rgba(0, 0, 0, 0.5) 60%), url(Img/wallpaper.png);
-    }
+    .home .content {margin: 0 15px;}
     .home .content h3 { font-size: 1.8rem; }
     .home .content span { font-size: 1.2rem; }
 }
