@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style/styles.css">
     <link rel="stylesheet" href="Style/stylehome.css">
-    <link rel="stylesheet" href="Style/styleabout.css">
     <link rel="stylesheet" href="Style/stylecontact.css">
     <link rel="stylesheet" href="Style/stylesfeature.css">
     <link rel="stylesheet" href="Style/dino.css">
@@ -387,10 +386,11 @@ if (!window.currentSlide) window.currentSlide = function(n){ slideIndex = n; };
 /* ===== Dino carousel (pricing/testimonial) from dino.js merged here ===== */
 document.addEventListener('DOMContentLoaded', function(){
         const track = document.querySelector('.carousel-track');
+        const container = document.querySelector('.carousel-container');
         const nextBtn = document.querySelector('.next');
         const prevBtn = document.querySelector('.prev');
         const cards = document.querySelectorAll('.price-card');
-        let currentIndex = 0;
+        let currentIndex = 0; // เริ่มที่การ์ดแรก
 
         if (!track || !cards.length || !nextBtn || !prevBtn) return; // no carousel on this page
 
@@ -404,34 +404,26 @@ document.addEventListener('DOMContentLoaded', function(){
 
         function updateCarousel() {
             const cardWidth = getCardWidth();
-            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            const containerWidth = container ? container.clientWidth : (track.parentElement ? track.parentElement.clientWidth : 0);
+            const centerOffset = (containerWidth - cardWidth) / 2; // ทำให้การ์ดปัจจุบันอยู่กลาง
+            const x = centerOffset - (currentIndex * cardWidth);
+            track.style.transform = `translateX(${x}px)`; // อนุญาตให้เป็นค่า + ได้เพื่อเว้นขอบซ้าย
             track.style.transition = "transform 0.5s ease";
         }
 
         nextBtn.addEventListener('click', () => {
-            if (currentIndex < cards.length - 3) {
-                currentIndex++;
-            } else {
-                // ถ้าอยู่สุดท้าย ให้กลับไปอันแรก
-                currentIndex = 0;
-            }
+            // เลื่อนทีละ 1 การ์ด ครบ 5 ใบแล้ววนกลับไปเริ่มใหม่
+            currentIndex = (currentIndex + 1) % cards.length;
             updateCarousel();
         });
 
         prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                // ถ้าอยู่แรก ให้ไปอันสุดท้าย
-                currentIndex = cards.length - 1;
-            }
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
             updateCarousel();
         });
 
-        // handle resize to recalc
-        window.addEventListener('resize', function(){
-            updateCarousel();
-        });
+        // handle resize to recalc and keepการ์ดปัจจุบันอยู่กลาง
+        window.addEventListener('resize', updateCarousel);
 
         // Ensure the carousel is positioned correctly on init and after all resources (images/fonts) load
         // in case card widths change after DOMContentLoaded.

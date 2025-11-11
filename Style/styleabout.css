@@ -5,7 +5,7 @@ body {
   margin: 60px 0 0 0;
   background-image: url(../Img/wallpaper2.jpg);
   position: relative;
-  object-fit: covers;
+  object-fit: cover;
 }
 
 body::before {

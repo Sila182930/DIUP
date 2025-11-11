@@ -17,7 +17,7 @@ body {
 
 /* ส่วน Features Section */
 .features-section {
-    padding: 60px 20px;
+    padding: 60px 20px 20px;
     text-align: center;
     background-color: #24201D; /* RAISIN BLACK - พื้นหลังเข้ม */
     color: #D9D4C8; /* TIMBERWOLF - ข้อความสีอ่อน */
@@ -203,8 +203,8 @@ body {
     width: 55px;
     border-radius: 100%; 
 }
-.prev-btn { left: 0px; }
-.next-btn { right: 0px; }
+.prev-btn { left: -20px; }
+.next-btn { right: -20px; }
 
 /* === DOT NAVIGATION STYLES === */
 .dot-nav {
@@ -235,8 +235,9 @@ body {
 }
 
 /* Media Query สำหรับ Desktop/จอขนาดใหญ่ */
-@media (min-width: 768px) {
+@media (min-width: 1070px) {
     .features-grid {
         grid-template-columns: repeat(3, 1fr); 
     }
+
 }

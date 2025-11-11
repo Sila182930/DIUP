@@ -10,6 +10,7 @@
 
 .section {
     padding: 2rem 9%;
+    width: 100%;
 }
 
 .home {
@@ -25,7 +26,6 @@
 }
 
 .home::before {
-    /* keep an empty pseudo-element so content can be stacked above it easily */
     content: '';
     position: absolute;
     inset: 0;
@@ -82,43 +82,16 @@
     transform: scale3d(1.03);
 }
 
-/* Responsive: center home content on smaller screens */
-@media (max-width: 900px) {
-    .home {
-        /* flex-direction: column; */
-        align-items: center;
-        text-align: left;
-        padding-top: 80px; /* keep content below fixed nav */
-    }
+
+@media (max-width:900px) {
     .home .content {
-        margin-left: 0;
-        max-width: 90%;
-        padding: 0 4rem;
-    }
-    .home .content h3 {
-        font-size: 2.2rem;
-    }
-    .home .content span {
-        font-size: 1.6rem;
-        display: block;
-    }
-    .home .content p {
-        font-size: 1rem;
-    }
-    .btn {
-        margin: 1rem auto 0;
-    }
-    .section-divider {
-        margin: 1.5rem auto;
+        margin-left:30px;
     }
 }
 
 @media (max-width: 480px) {
     .home{
-        padding: 0;
-    }
-    .home .content{
-        margin: 0 -3rem;
+        background-image: radial-gradient(circle at 100% 50%, transparent 30%, rgba(0, 0, 0, 0.5) 60%), url(Img/wallpaper.png);
     }
     .home .content h3 { font-size: 1.8rem; }
     .home .content span { font-size: 1.2rem; }
