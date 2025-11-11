@@ -1,0 +1,248 @@
+body {
+  background: #faf7f2; /* สีพื้นหลังอ่อน */
+  font-family: 'Inter', sans-serif;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.pricing-carousel {
+  text-align: center;
+  /* หากต้องการใช้รูปภาพ แนะนำให้ตรวจสอบว่ามีไฟล์ชื่อ 06.jpg อยู่ในโฟลเดอร์เดียวกัน */
+  background-size: cover;
+  background-position: center; /* เพิ่มการจัดตำแหน่งรูปภาพพื้นหลัง */
+  padding: 40px 0; /* เพิ่มระยะห่างด้านบนและด้านล่างเพื่อให้ดูดีขึ้น */
+}
+
+.pricing-carousel h2 {
+  padding-top: 20px;
+  font-size: 2.5rem; /* เพิ่มขนาดหัวข้อหลัก */
+  margin-bottom: 0.5rem;
+  color: #ffffff; /* เปลี่ยนเป็นสีขาวที่ดูเป็นกลางมากขึ้น */
+  font-weight: 700;
+}
+
+.subtext {
+  color: #eeeeee; /* ปรับสีให้สว่างขึ้นเล็กน้อยเพื่อตัดกับพื้นหลัง */
+  margin-bottom: 4rem; /* เพิ่มระยะห่างด้านล่าง */
+  font-size: 1.15rem; /* ปรับขนาดตัวอักษรให้ดูสบายตา */
+}
+
+.carousel-container {
+  overflow: hidden;
+  max-width: 1100px; /* เพิ่มความกว้างสูงสุดเล็กน้อย */
+  margin: 0 auto;
+  position: relative; /* ถูกต้อง: ทำให้ปุ่ม absolute อ้างอิงได้ */
+  padding: 0 50px; /* เพิ่ม padding เพื่อให้มีที่ว่างสำหรับปุ่ม */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  /* === แก้ไขตรงนี้: จัดการ์ดให้อยู่ตรงกลางเมื่อมีพื้นที่ว่าง === */
+  /* For proper translateX-based carousel behavior the track must start at the left. */
+  justify-content: flex-start; /* align items to start so JS transforms behave predictably */
+  align-items: flex-start; /* จัดการ์ดให้อยู่แนวบน */
+  /* หากคุณใช้ JavaScript ในการเลื่อน carousel, อาจจะต้องใช้ transform หรือ margin-left/right ใน JS แทน */
+}
+
+
+.price-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* ปรับเงาให้ดูมีมิติมากขึ้น */
+  width: 300px;
+  margin: 0 1.25rem; /* เพิ่มระยะห่างระหว่างการ์ด */
+  flex-shrink: 0;
+  text-align: center;
+  padding: 2rem; /* เพิ่ม padding ภายใน */
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+/* ===== ปรับสีเมื่อ Hover: ใช้สีรอง (Accent Color) ที่ดูเป็นมิตร ===== */
+.price-card:hover {
+  transform: translateY(-8px); /* ขยับขึ้นมากขึ้น */
+  background-color: #4f5938; /* สีเขียวอ่อน/เขียวมะกอก */
+  color: #fff; /* เปลี่ยนข้อความเป็นสีขาว */
+}
+
+.price-card img {
+  border-radius: 12px;
+  width: 100%;
+  height: 250px; /* ลดความสูงของรูปภาพเล็กน้อย */
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.price-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.price {
+  font-size: 2.5rem; /* เพิ่มขนาดราคา */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== ปรับสีข้อความรองในส่วนราคาเมื่อ Hover ===== */
+.price span {
+  font-size: 1rem;
+  color: #777;
+}
+
+.price-card:hover .price span,
+.price-card:hover li {
+    color: #fff; /* ทำให้ข้อความรองและรายการเป็นสีขาวเมื่อ hover */
+}
+
+.price-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.price-card li {
+  margin: 0.5rem 0;
+  color: #444;
+  /* ใส่ icon/เครื่องหมายถูกนำหน้า li เพื่อความสวยงาม */
+  position: relative;
+  padding-left: 20px;
+}
+
+.price-card li::before {
+    content: "✓"; /* เพิ่มเครื่องหมายถูก */
+    color: #a5b77e; /* สีเขียวอ่อน */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.price-card:hover li::before {
+    color: #fff; /* เปลี่ยนสีเครื่องหมายถูกเป็นสีขาวเมื่อ hover */
+}
+
+
+/* ===== สไตล์ปุ่มที่ปรับปรุงใหม่ ===== */
+.btn-outline, .btn-primary {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 50px; /* ทำให้ปุ่มโค้งมนมากขึ้น */
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ปุ่ม Outline */
+.btn-outline {
+  border: 2px solid #565538; /* ใช้สีหลัก */
+  color: #565538;
+}
+
+.btn-outline:hover {
+  background: #565538;
+  color: #fff;
+}
+
+/* ปุ่ม Primary (สำหรับใช้กับการ์ดที่เลือก) - เพิ่มมาให้ */
+.btn-primary {
+    background: #a5b77e; /* ใช้สีรอง */
+    color: #fff;
+    border: 2px solid #a5b77e;
+}
+
+.btn-primary:hover {
+    background: #7c8e5e; /* สีเข้มขึ้นเมื่อ hover */
+    border-color: #7c8e5e;
+}
+
+/* ทำให้ปุ่มใน card ที่ถูก hover ดูสวยงามเมื่อเป็น .btn-outline */
+.price-card:hover .btn-outline {
+    border-color: #fff; /* เปลี่ยนขอบเป็นสีขาว */
+    color: #fff; /* เปลี่ยนข้อความเป็นสีขาว */
+}
+
+.price-card:hover .btn-outline:hover {
+    background: #fff; /* พื้นหลังเป็นสีขาว */
+    color: #565538; /* ข้อความเป็นสีหลัก */
+}
+
+/* ===== สไตล์ปุ่ม Carousel ===== */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* ถูกต้อง: ทำให้ปุ่มอยู่กึ่งกลางในแนวตั้งเสมอ */
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  color: #565538;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: #485331; /* สีรองเมื่อ hover */
+    color: #fff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-btn.prev {
+  left: 20px; 
+}
+
+.carousel-btn.next {
+  right: 20px; 
+}
+
+/* ===== ปรับตำแหน่งปุ่มในหน้าจอเล็ก ===== */
+@media (max-width: 1100px) {
+    .carousel-btn.prev {
+        left: 10px;
+    }
+    .carousel-btn.next {
+        right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+  .carousel-btn {
+    /* position: fixed; */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .carousel-btn.prev {
+    left: 5px;
+  }
+
+  .carousel-btn.next {
+    right: 5px;
+  }
+
+  .price-card {
+    width: 280px;
+    margin: 0 0.5rem;
+  }
+
+  .carousel-container {
+    padding: 0 10px;
+  }
+}

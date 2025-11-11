@@ -1,0 +1,242 @@
+/* การตั้งค่าพื้นฐาน */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D9D4C8; /* TIMBERWOLF */
+    color: #24201D; /* RAISIN BLACK */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-bottom: 35px;
+    padding: 20px;
+}
+
+/* ส่วน Features Section */
+.features-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #24201D; /* RAISIN BLACK - พื้นหลังเข้ม */
+    color: #D9D4C8; /* TIMBERWOLF - ข้อความสีอ่อน */
+}
+
+.section-title {
+    color: #792E29; /* GARNET */
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    font-size: 2em;
+    color: #D9D4C8; /* TIMBERWOLF */
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.slider-container {
+    max-width: 400px; /* จำกัดความกว้างให้แสดง Card เดียว */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; 
+    padding-bottom: 50px; 
+}
+
+.slides-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.recommend {
+    color: #792E29; /* GARNET */
+}
+
+/* การจัดวาง Grid สำหรับ Card */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.feature-slide {
+    min-width: 100%; 
+    padding: 0 10px; 
+    box-sizing: border-box;
+}
+
+/* Card แต่ละอัน */
+.feature-card {
+    background-color: #cac4b5; /* GRULLO */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* เงาเข้มขึ้นเล็กน้อยให้เข้ากับ Dark Theme */
+    transition: transform 0.3s ease;
+    color: #24201D; /* RAISIN BLACK สำหรับข้อความใน card */
+}
+
+.background-card-product {
+    background-color: #88888800;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card-recommend {
+    background-color: #cac4b5; /* GRULLO */
+    border: 2px solid #ffffff; /* สีเข้มขึ้นเล็กน้อยเพื่อความชัดเจน */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* เงาเข้มขึ้นเล็กน้อยให้เข้ากับ Dark Theme */
+    transition: transform 0.3s ease;
+    color: #24201D; /* RAISIN BLACK สำหรับข้อความใน card */
+}
+
+.feature-card-recommend:hover {
+    transform: translateY(-5px);
+}
+
+.features-grid-recommend {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.card-image {
+    height: 120px; 
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; 
+    color: #D9D4C8; /* TIMBERWOLF สำหรับไอคอน/รูปภาพ */
+}
+
+.card-image img {
+    width: 250px; /* 👈 ทำให้รูปภาพมีความกว้างสูงสุดเท่ากับความกว้างของกล่องแม่ */
+    height: 130px;    /* 👈 คงอัตราส่วนของรูปภาพไว้เสมอ */
+    display: block;
+    object-fit: cover;
+}
+
+.card-image .deno {
+    margin-top: 20px;
+    width: 260px; /* 👈 ทำให้รูปภาพมีความกว้างสูงสุดเท่ากับความกว้างของกล่องแม่ */
+    height: 150px;    /* 👈 คงอัตราส่วนของรูปภาพไว้เสมอ */
+    display: block;
+    object-fit: cover;
+}
+
+.feature-card h4 {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #792E29; /* GARNET */
+    font-weight: 600;
+}
+
+.feature-card h5 {
+    font-size: 1.5em;
+    margin-top: 10;
+    color: #fefefe; /* GARNET */
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: #4f4c4a; /* สีเข้มขึ้นเล็กน้อยเพื่อให้ตัดกับ GRULLO */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.feature-card .TRex {
+    color: #c6c6c6; /* สีเข้มขึ้นเล็กน้อยเพื่อให้ตัดกับ GRULLO */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.feature-card-recommend {
+    border: 2px solid #ffffff; /* สีเข้มขึ้นเล็กน้อยเพื่อความชัดเจน */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* เงาเข้มขึ้นเล็กน้อยให้เข้ากับ Dark Theme */
+    transition: transform 0.3s ease;
+    color: #24201D; /* RAISIN BLACK สำหรับข้อความใน card */
+}
+
+.more-link {
+    display: inline-block;
+    color: #792E29; /* GARNET */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 2px solid #792E29; /* GARNET */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.more-link:hover {
+    background-color: #792E29; /* GARNET */
+    color: #D9D4C8; /* TIMBERWOLF */
+}
+
+.nav-arrow {
+    margin-right: 20px;
+    margin-left: 20px;
+    position: absolute;
+    top: 45%; 
+    transform: translateY(-60%);
+    background: #d9d4c819; 
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    height: 55px;
+    width: 55px;
+    border-radius: 100%; 
+}
+.prev-btn { left: 0px; }
+.next-btn { right: 0px; }
+
+/* === DOT NAVIGATION STYLES === */
+.dot-nav {
+    position: absolute;
+    bottom: 0px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+.dot {
+    height: 8px;
+    width: 8px; 
+    background-color: #888; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+.dot.active {
+    background-color: #792E29;
+}
+
+/* Responsive: ขยาย slider เมื่อมีพื้นที่มากขึ้น */
+@media (min-width: 768px) {
+    .slider-container {
+        max-width: 800px;
+    }
+}
+
+/* Media Query สำหรับ Desktop/จอขนาดใหญ่ */
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}

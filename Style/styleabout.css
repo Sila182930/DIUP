@@ -1,0 +1,189 @@
+/* ===== Global Styles ===== */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000000;
+  margin: 60px 0 0 0;
+  background-image: url(../Img/wallpaper2.jpg);
+  position: relative;
+  object-fit: covers;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('../Img/wallpaper2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+
+.lead-text-muted {
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+}
+/* ===== Company Section ===== */
+.company-section-py-5 {
+  padding: 60px 0 60px;
+}
+
+
+
+.section-title-dark {
+  font-weight: 700;
+}
+
+/* ===== Team Section ===== */
+.team-section-py-5 {
+  padding: 60px 0 0;
+}
+
+.team-title-main {
+  font-weight: 700;
+}
+
+.team-subtitle {
+  color: #000000;
+  /* สีชมพู (Magenta) */
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+.team-card-v5 {
+  background-color: rgb(217,212,200) ;
+  /* สีเทาอ่อน */
+  border: none;
+  border-radius: 15px;
+  /* ขอบมน */
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  /* เงาจางๆ */
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.team-card-v5:hover {
+  background-color: rgb(171,163,143) ;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- รูปภาพ (วงกลม 2 ชั้น) --- */
+.team-card-v5 .img-wrapper {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  /* วงกลม */
+  background-color: #e9ecef;
+  /* สีขอบนอก (เทา) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  /* ขนาดขอบนอก */
+}
+
+.team-card-v5 .team-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #792E29;
+  /* สีขอบใน (ชมพู) */
+}
+
+/* --- เนื้อหาการ์ด --- */
+.team-card-v5 .card-body {
+  padding: 0;
+  /* ลบ padding เดิมของ card-body */
+}
+
+.team-card-v5 .card-title {
+  color: #222;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.team-card-v5 .card-text-position {
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 400;
+  /* ตัวปกติ */
+}
+
+.team-card-v5 .card-text-id {
+  color: #6c757d;
+  /* สีเทา */
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- ปุ่ม GitHub (สีทึบ) --- */
+.btn-github-v5 {
+  background-color: #792E29;
+  /* สีชมพู (Magenta) */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-github-v5:hover {
+  background-color: #792E29;
+  /* สีเข้มขึ้นเมื่อ hover */
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.section-divider {
+  /* Desktop: long centered divider */
+  width: 1000px;           /* preferred desktop width */
+  max-width: 80%;         /* never overflow the viewport */
+  margin: 0 auto 0;     /* center and add small gap below */
+  height: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-top: 10px dotted #ffffff;
+}
+
+/* Center headings and adjust divider on smaller screens */
+@media (max-width: 900px) {
+  .section-title-dark,
+  .team-title-main,
+  .team-subtitle {
+    text-align: center;
+  }
+  /* tablet: shorter divider */
+  .section-divider {
+    width: 60%;
+    max-width: 320px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* mobile: keep it compact */
+  .section-divider { width: 70%; max-width: 220px; }
+}
+
+.company-section-py-5 .row , .row-mb-5 {
+    background-color: rgba(31, 31, 31, 0.185);
+    border-radius: 20px;
+    padding: 20px 0 20px;
+    
+}
+.row-mb-5 {
+  margin-bottom: 60px;
+}

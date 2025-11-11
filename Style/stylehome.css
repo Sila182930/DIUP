@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+.section {
+    padding: 2rem 9%;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    position: relative;
+}
+
+.home::before {
+    /* keep an empty pseudo-element so content can be stacked above it easily */
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.home .content {
+    max-width: 400rem;
+    margin-left: 100px;
+    z-index: 1;
+}
+
+.home .content h3 {
+    font-size: 4em;
+    color: #D9D4C8;
+}
+
+.home .content span {
+    font-size: 3.5rem;
+    color: #ABA38F;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.home .content p {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.home .content a {
+    margin-top: 60px;
+    width: auto;
+    font-size: 1.25rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #fff;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #D9D4C8;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #565538;
+    color: white;
+    box-shadow: 0 0 25px #D9D4C8;
+    transform: scale3d(1.03);
+}
+
+/* Responsive: center home content on smaller screens */
+@media (max-width: 900px) {
+    .home {
+        /* flex-direction: column; */
+        align-items: center;
+        text-align: left;
+        padding-top: 80px; /* keep content below fixed nav */
+    }
+    .home .content {
+        margin-left: 0;
+        max-width: 90%;
+        padding: 0 4rem;
+    }
+    .home .content h3 {
+        font-size: 2.2rem;
+    }
+    .home .content span {
+        font-size: 1.6rem;
+        display: block;
+    }
+    .home .content p {
+        font-size: 1rem;
+    }
+    .btn {
+        margin: 1rem auto 0;
+    }
+    .section-divider {
+        margin: 1.5rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .home{
+        padding: 0;
+    }
+    .home .content{
+        margin: 0 -3rem;
+    }
+    .home .content h3 { font-size: 1.8rem; }
+    .home .content span { font-size: 1.2rem; }
+}
